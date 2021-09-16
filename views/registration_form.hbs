@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./bootstrap/bootstrap.css">
+
+    </head>
+
+    <body>
+        {{!-- setTimeout(function(){
+   window.location.reload(1);
+}, 10000); --}}
+
+        <div class="row data">
+            
+            {{!-- Enter User Detail --}}
+            <div class="col-md-3">
+                <div class="main">
+                    <h4>Enter Details</h4>
+                    <form action="/submit_form" class="" method="post">
+
+                        {{!-- <div class="form-group"> --}}
+                        <label for="name">Your Name:</label>
+                        <input type="text" name="name" id="name" placeholder="Enter your Name"/>
+                        <br>
+                        {{!-- </div> --}}
+
+                        {{!-- <div class="form-group"> --}}
+                        <label for="email">Your Email:</label>
+                        <input type="text" name="email" placeholder="Enter your Email"/>
+                        <br>
+                        {{!-- </div> --}}
+
+                        {{!-- <div class="form-group"> --}}
+                        <label for="phone">Phone:</label>
+                        <input type="text" name="phone" placeholder="Enter Phone Number"/>
+                        <br>
+                        {{!-- </div> --}}
+
+                        {{!-- <div class="form-group"> --}}
+                        <label for="state">State:</label>
+                        <input type="text" name="state" placeholder="Enter State Name"/>
+                        <br>
+                        {{!-- </div> --}}
+
+                        {{!-- <div class="form-group"> --}}
+                        <label for="dist">District:</label>
+                        <input type="text" name="dist" placeholder="Enter District Name"/>
+                        <br>
+                        {{!-- </div> --}}
+                        <br>
+                        <input type="submit" name="submit" class="submit" value="Submit"/>
+
+                    </form>
+                    <!--main-center"-->
+                </div>
+                <!--main-->
+            </div>
+            {{!-- EDIT / DELETE / VIEW --}}
+            <div class="col-md-9 OverFlow">
+                <table id="table">
+                    <thead>
+                        <tr>
+                            <th>SR No.</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>State</th>
+                            <th>Dist</th>
+                            <th>EDIT/DELETE</th>
+                            <th>View</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {{#each UserData}}
+                            <tr class="tbody">
+                                <td style="text-align: center; width:50px ">
+                                    <span class="count"></span>
+                                </td>
+                                <td>{{name}}</td>
+                                <td>{{email}}</td>
+                                <td>{{phone}}</td>
+                                <td>{{state}}</td>
+                                <td>{{dist}}</td>
+                                <td>
+                                    <a href="/edit/{{_id}}">EDIT</a>&nbsp &nbsp<a href="/delete/{{_id}}">DELETE</a>
+                                </td>
+                                <td>
+                                    <a href="/viewDetail/{{_id}}">View</a>
+                                </td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+
+            </div>
+
+
+
+            {{!-- VIEW Section --}}
+            <div class="col-md-8">
+                <div class="ViewData">
+                    <h3>Name:{{viewDat.name}}</h3>
+                    <h3>Email:{{viewDat.email}}</h3>
+                    <h3>Phone:{{viewDat.phone}}</h3>
+                    <h3>State:{{viewDat.state}}</h3>
+                    <h3>Dist:{{viewDat.dist}}</h3>
+                </div>
+            </div>
+
+
+
+            {{!-- UPDATE DETAIL --}}
+            <div class="col-md-3">
+               
+ <div class="main">
+                    <h4>Update Details</h4>
+                    <form action="/update_form" class="" method="post">
+
+                            <input type="hidden" name="_id" value="{{update._id}}">
+                            <br>
+                        {{!-- <div class="form-group"> --}}
+                        <label for="name">Your Name:</label>
+                        <input type="text" name="name" id="name" placeholder="Enter your Name" value="{{update.name}}"/>
+                        <br>
+                        {{!-- </div> --}}
+
+                        {{!-- <div class="form-group"> --}}
+                        <label for="email">Your Email:</label>
+                        <input type="text" name="email" placeholder="Enter your Email" value="{{update.email}}"/>
+                        <br>
+                        {{!-- </div> --}}
+
+                        {{!-- <div class="form-group"> --}}
+                        <label for="phone">Phone:</label>
+                        <input type="text" name="phone" placeholder="Enter Phone Number" value="{{update.phone}}"/>
+                        <br>
+                        {{!-- </div> --}}
+
+                        {{!-- <div class="form-group"> --}}
+                        <label for="state">State:</label>
+                        <input type="text" name="state" placeholder="Enter State Name" value="{{update.state}}"/>
+                        <br>
+                        {{!-- </div> --}}
+
+                        {{!-- <div class="form-group"> --}}
+                        <label for="dist">District:</label>
+                        <input type="text" name="dist" placeholder="Enter District Name"value="{{update.dist}}"/>
+                        <br>
+                        {{!-- </div> --}}
+                        <br>
+                        <input type="submit" name="submit" class="submit" value="Update"/>
+
+                    </form>
+                    <!--main-center"-->
+                </div>
+
+
+            </div>
+        <div class="col-md-1"></div>
+        </div>
+
+
+        <script src="./jquery/jquery.js" type="text/javascript"></script>
+        <script src="./js/bootstrap.js" type="text/javascript"></script>
+        <!------ Include the above in your HEAD tag ---------->
+
+        {{!-- <script>
+            window.setInterval('refresh()', 2000);
+            function refresh() {
+                window
+                    .location
+                    .reload();
+            }
+        </script> --}}
+    </body>
+
+</html>

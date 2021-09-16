@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    counter-reset: section;
+}
+.count::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.col-md-3,
+.col-md-9 {
+    border: 1px solid black;
+    overflow: hidden;
+}
+.col-md-3 {
+    background-color: lightblue;
+}
+.main label {
+    font-size: 20px;
+}
+
+.main h4 {
+    text-align: center;
+}
+.main input {
+    border-radius: 20px;
+    border: none;
+    float: right;
+    width: 200px;
+}
+.main input::placeholder {
+    padding-left: 10px;
+}
+.submit {
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin-right: 80px !important;
+    margin-bottom: 10px !important;
+}
+
+.submit:hover {
+    background-color: red;
+}
+
+#table {
+    width: 100%;
+}
+thead {
+    position: sticky;
+    top: -1px;
+}
+thead tr {
+    text-align: center;
+}
+
+thead tr th {
+    background-color: #ff0000;
+    border-collapse: collapse;
+    border: 2px solid black;
+    min-width: 60px;
+}
+table::-webkit-scrollbar-thumb {
+    background: green;
+    border-radius: 10px;
+}
+tbody tr {
+    font-size: 17px;
+}
+tbody tr td {
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(150, 212, 212, 0.4);
+}
+
+.OverFlow {
+    overflow-y: scroll;
+    display: block;
+    max-height: 300px;
+}
+
+.back:hover {
+    font-size: 20px;
+    color: red;
+}
+
+/* .ViewData {
+    width: 80%;
+    height: 250px;
+    border:2px solid red;
+  margin-top: 50px;
+  margin-left: 50px;
+} */

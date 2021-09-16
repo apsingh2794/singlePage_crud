@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            {{!-- <link rel="stylesheet" href="./css/style.css"> --}}
+    <title>Document</title>
+</head>
+<body>
+    <div style="margin: 100px;">
+
+ <div class="main">
+                    <h4>Update Details</h4>
+                    <form action="/registration_form" class="" method="post">
+
+                            <input type="hidden" name="_id" value="{{update._id}}">
+                            <br>
+                        {{!-- <div class="form-group"> --}}
+                        <label for="name">Your Name:</label>
+                        <input type="text" name="name" id="name" placeholder="Enter your Name" value="{{update.name}}"/>
+                        <br>
+                        {{!-- </div> --}}
+
+                        {{!-- <div class="form-group"> --}}
+                        <label for="email">Your Email:</label>
+                        <input type="text" name="email" placeholder="Enter your Email" value="{{update.email}}"/>
+                        <br>
+                        {{!-- </div> --}}
+
+                        {{!-- <div class="form-group"> --}}
+                        <label for="phone">Phone:</label>
+                        <input type="text" name="phone" placeholder="Enter Phone Number" value="{{update.phone}}"/>
+                        <br>
+                        {{!-- </div> --}}
+
+                        {{!-- <div class="form-group"> --}}
+                        <label for="state">State:</label>
+                        <input type="text" name="state" placeholder="Enter State Name" value="{{update.state}}"/>
+                        <br>
+                        {{!-- </div> --}}
+
+                        {{!-- <div class="form-group"> --}}
+                        <label for="dist">District:</label>
+                        <input type="text" name="dist" placeholder="Enter District Name"value="{{update.dist}}"/>
+                        <br>
+                        {{!-- </div> --}}
+                        <br>
+                        <input type="submit" name="submit" class="submit" value="Update"/>
+
+                    </form>
+                    <!--main-center"-->
+                </div>
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>
